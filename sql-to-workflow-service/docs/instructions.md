@@ -231,7 +231,7 @@ The current implementation supports:
 
 # Demo
 
-> https://www.youtube.com/watch?v=IBk0Eis8Uqo
+**Demo Video:** https://www.youtube.com/watch?v=IBk0Eis8Uqo
 
 The demo video provides an end-to-end walkthrough of the SQL-to-Workflow translation process and showcases the generated workflow output.
 
@@ -250,3 +250,11 @@ The remaining work primarily involves integrating the service with Texera's exis
 - Verify end-to-end execution after integrating the updated CSVScan operator with the generated workflows.
 
 Apart from the CSVScan operator integration, the majority of the SQL-to-Workflow backend implementation is complete.
+
+---
+
+# Notes
+
+This document summarizes the current implementation of the SQL-to-Workflow service and its related integration points within Texera.
+
+If additional clarification, documentation, or implementation details are required during review or integration, I would be happy to provide them.
