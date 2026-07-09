@@ -181,6 +181,16 @@ The demo video provides an end-to-end walkthrough of the SQL-to-Workflow transla
 
 ---
 
-# Repository Notes
+# Next Steps
 
-The architecture diagram provides a visual overview of the translation pipeline, while the demo video demonstrates the service in action. This document is intended as a quick reference for navigating the implementation and understanding the responsibilities of the major components within the SQL-to-Workflow service.
+The core SQL-to-Workflow service has been implemented, including SQL parsing, logical plan generation, optimization, and workflow generation.
+
+The remaining work primarily involves integrating the service with Texera's existing execution pipeline.
+
+### Pending Integration
+
+- Update the **CSVScan Operator** to support the new hybrid type inference implementation introduced by the SQL-to-Workflow service.
+- Align the operator with the newly introduced code structure and supporting files to ensure compatibility with the generated workflow.
+- Verify end-to-end execution after integrating the updated CSVScan operator with the generated workflows.
+
+Apart from the CSVScan operator integration, the majority of the SQL-to-Workflow backend implementation is complete.
