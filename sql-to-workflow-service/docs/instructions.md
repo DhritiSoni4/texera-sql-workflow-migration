@@ -139,6 +139,44 @@ sql-to-workflow-service/
 | **Casing** | Handles SQL identifier casing and quoted/unquoted identifier conventions. |
 
 ---
+---
+
+# Related Integration (Access Control Service)
+
+In addition to the standalone SQL-to-Workflow service, a supporting resource has been implemented within the **Access Control Service** to persist and retrieve SQL queries associated with Texera workflows.
+
+### `SqlWorkflowResource.scala`
+
+**Location**
+
+```text
+access-control-service/
+└── src/main/scala/org/apache/texera/service/resource/
+    └── SqlWorkflowResource.scala
+```
+
+**Purpose**
+
+`SqlWorkflowResource` provides REST APIs for storing and retrieving SQL queries associated with a workflow. It acts as the persistence layer between the frontend and the PostgreSQL database by maintaining the SQL text and parameter bindings for each workflow.
+
+**Endpoints**
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/sql/workflow/{wid}` | `POST` | Stores or updates the SQL query and its parameter bindings for the specified workflow ID. |
+| `/sql/workflow/{wid}` | `GET` | Retrieves the stored SQL query and parameter bindings for the specified workflow ID. |
+
+**Responsibilities**
+
+- Persists SQL queries for individual workflows.
+- Stores parameter bindings as PostgreSQL `JSONB`.
+- Supports updating existing workflow SQL using an upsert operation.
+- Retrieves previously saved SQL and bindings for workflow editing or regeneration.
+- Returns an empty SQL body when no stored workflow exists for the requested workflow ID.
+
+This resource complements the SQL-to-Workflow service by providing persistent storage for SQL definitions, enabling workflows to be saved and reloaded without regenerating SQL from scratch.
+
+---
 
 # Request Flow
 
