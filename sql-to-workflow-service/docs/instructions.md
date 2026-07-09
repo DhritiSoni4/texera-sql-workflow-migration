@@ -139,9 +139,8 @@ sql-to-workflow-service/
 | **Casing** | Handles SQL identifier casing and quoted/unquoted identifier conventions. |
 
 ---
----
 
-# Related Integration (Access Control Service)
+## Related Integration (Access Control Service)
 
 In addition to the standalone SQL-to-Workflow service, a supporting resource has been implemented within the **Access Control Service** to persist and retrieve SQL queries associated with Texera workflows.
 
