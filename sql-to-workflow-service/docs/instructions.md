@@ -12,11 +12,8 @@ This document serves as a guide to the current implementation and is intended to
 
 # Architecture
 
-> **Insert Architecture Diagram Here**
+<img width="664" height="321" alt="Architecture diagram low level" src="https://github.com/user-attachments/assets/bc3ac117-b6eb-4aa0-94f8-6f7dace37ed8" />
 
-```md
-![SQL-to-Workflow Architecture](![SQL-to-Workflow Architecture](Architecture diagram low level.png))
-```
 
 The architecture diagram illustrates the overall SQL-to-Workflow translation pipeline and the interaction between the major components of the service.
 
@@ -178,13 +175,7 @@ The current implementation supports:
 
 # Demo
 
-> **Insert Demo Video Link Here**
-
-Example:
-
-```text
-https://youtu.be/<your-demo-video>
-```
+> https://www.youtube.com/watch?v=IBk0Eis8Uqo
 
 The demo video provides an end-to-end walkthrough of the SQL-to-Workflow translation process and showcases the generated workflow output.
 
