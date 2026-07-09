@@ -176,6 +176,25 @@ access-control-service/
 This resource complements the SQL-to-Workflow service by providing persistent storage for SQL definitions, enabling workflows to be saved and reloaded without regenerating SQL from scratch.
 
 ---
+## Database Schema
+
+To support persistence of SQL queries across workflow sessions, a new `workflow_sql` table should be added to `texera_ddl.sql`. This table stores the SQL query and its associated parameter bindings for each workflow, allowing previously entered SQL to be retrieved instead of requiring users to re-enter it every time a workflow is reopened.
+
+```sql
+CREATE TABLE IF NOT EXISTS workflow_sql
+(
+    wid         INT PRIMARY KEY,
+    sql_text    TEXT NOT NULL,
+    bindings    JSONB NOT NULL DEFAULT '{}'::jsonb,
+    updated_at  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (wid)
+        REFERENCES workflow(wid)
+        ON DELETE CASCADE
+);
+```
+
+The `SqlWorkflowResource` uses this table to persist and retrieve SQL definitions associated with a workflow. This enables users to continue editing existing SQL queries and preserves parameter bindings across sessions.
 
 # Request Flow
 
