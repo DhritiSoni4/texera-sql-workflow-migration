@@ -15,7 +15,7 @@ This document serves as a guide to the current implementation and is intended to
 > **Insert Architecture Diagram Here**
 
 ```md
-![SQL-to-Workflow Architecture](docs/architecture-diagram.png)
+![SQL-to-Workflow Architecture](/Users/dhritisoni/IdeaProjects/texera/Architecture diagram low level.png)
 ```
 
 The architecture diagram illustrates the overall SQL-to-Workflow translation pipeline and the interaction between the major components of the service.
